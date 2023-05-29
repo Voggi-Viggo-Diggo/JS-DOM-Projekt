@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM project</title>
+    <link rel="stylesheet" type="text/css" href="DOM style.css"> 
+</head>
+
+<body id ="webid">
+
+<!--Skapar en tom div längst upp på sidan-->
+<div id="top_div">
+    <h4 id="header"></h4>
+    <p id="datetime"></p>
+    <img src="https://leflaneurlondon.files.wordpress.com/2015/06/wpid-wp-1435257783060.jpg" id ="image" width="100px" height="100px">
+</div>
+
+<!--Skapar en flex box med tre divar i-->
+<div class="flex-box">
+
+    <div class="flex-container">
+        <div class="flex-item" id="flex_id1" onclick="document.getElementById('webid').style.backgroundColor ='lightblue'">
+            <div class="text">Change Bg</div>
+        </div>
+
+        <div class="flex-item" id="flex_id2">
+            <div class="text">Good vibes</div>
+        </div>
+
+        <div class="flex-item" id="flex_id3">
+            <div class="text">Time</div>
+        </div>
+    </div>
+
+    <div class="flex-container2">
+        <div class="flex-item" id="flex_id4">
+            <div class="text">Change picture</div>
+        </div>
+
+        <div class="flex-item" id="flex_id5">
+            <div class="text">Hide picture</div>
+        </div>
+
+        <div class="flex-item" id="flex_id6">
+            <div class="text">Show picture</div>
+        </div>
+    </div>
+
+    <div class="flex-container3">
+        <div class="flex-item" id="flex_id7" onclick="document.getElementById('top_div').style.backgroundColor = 'grey'">
+            <div class="text">Header</div>
+        </div>
+
+        <div class="flex-item" id="flex_id8">
+            <div class="text">Remove header</div>
+        </div>
+
+        <div class="flex-item" id="flex_id9">
+            <div class="text">Show header</div>
+        </div>
+    </div>
+
+</div>
+
+<!--Skapar en tom div längst ner på sidan-->
+<div id="bottom_div">
+</div>
+
+<script>
+
+    //Gör knapparna lila när man håler muspekaren över dem
+    document.getElementById("flex_id1").addEventListener("mouseover", function(){
+        document.getElementById("flex_id1").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id1").addEventListener("mouseout", function(){
+        document.getElementById("flex_id1").style.backgroundColor = "dodgerblue";
+    });
+
+    document.getElementById("flex_id2").addEventListener("mouseover", function(){
+        document.getElementById("flex_id2").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id2").addEventListener("mouseout", function(){
+        document.getElementById("flex_id2").style.backgroundColor = "dodgerblue";
+    });
+
+    document.getElementById("flex_id3").addEventListener("mouseover", function(){
+        document.getElementById("flex_id3").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id3").addEventListener("mouseout", function(){
+        document.getElementById("flex_id3").style.backgroundColor = "dodgerblue";
+    });
+
+    document.getElementById("flex_id4").addEventListener("mouseover", function(){
+        document.getElementById("flex_id4").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id4").addEventListener("mouseout", function(){
+        document.getElementById("flex_id4").style.backgroundColor = "dodgerblue";
+    });
+
+    document.getElementById("flex_id5").addEventListener("mouseover", function(){
+        document.getElementById("flex_id5").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id5").addEventListener("mouseout", function(){
+        document.getElementById("flex_id5").style.backgroundColor = "dodgerblue";
+    });
+
+    document.getElementById("flex_id6").addEventListener("mouseover", function(){
+        document.getElementById("flex_id6").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id6").addEventListener("mouseout", function(){
+        document.getElementById("flex_id6").style.backgroundColor = "dodgerblue";
+    });
+
+    document.getElementById("flex_id7").addEventListener("mouseover", function(){
+        document.getElementById("flex_id7").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id7").addEventListener("mouseout", function(){
+        document.getElementById("flex_id7").style.backgroundColor = "dodgerblue";
+    });
+
+    document.getElementById("flex_id8").addEventListener("mouseover", function(){
+        document.getElementById("flex_id8").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id8").addEventListener("mouseout", function(){
+        document.getElementById("flex_id8").style.backgroundColor = "dodgerblue";
+    });
+
+    document.getElementById("flex_id9").addEventListener("mouseover", function(){
+        document.getElementById("flex_id9").style.backgroundColor = "purple";  
+    });
+    document.getElementById("flex_id9").addEventListener("mouseout", function(){
+        document.getElementById("flex_id9").style.backgroundColor = "dodgerblue";
+    });
+
+    //Skapar rubrik med goda vibbar i en div
+    document.getElementById("flex_id2").addEventListener("click", click1)
+
+    function click1(){
+        const head = document.createElement("h1");
+        const node = document.createTextNode("Be the best version of yourself!");
+        head.appendChild(node);
+
+        const element = document.getElementById("header")
+        element.appendChild(head)
+    }
+
+    //Visar tid och datum
+    document.getElementById("flex_id3").addEventListener("click", click2)
+
+    function click2(){
+        const d = new Date();
+        d.setDate(d.getDate() + 50);
+        document.getElementById("datetime").innerHTML = d;
+    }
+
+    //Ändrar bild
+    document.getElementById("flex_id4").addEventListener("click", click3)
+
+    function click3(){
+        document.getElementById("image").src = "https://cdn.pixabay.com/photo/2013/07/12/13/58/dice-147670_640.png"
+        document.setAttribute("height", "100px")
+        document.setAttribute("width", "100px" )
+    }
+
+    //Gömmer bilden
+    document.getElementById("flex_id5").addEventListener("click", click4)
+
+    function click4(){
+        var img_hide = document.getElementById('image');
+        img_hide.style.visibility = 'hidden'
+    }
+
+    //Visar bilden
+    document.getElementById("flex_id6").addEventListener("click", click5)
+
+    function click5(){
+       var img_show = document.getElementById('image');
+       img_show.style.visibility = 'visible'
+    }
+
+    //Stylar top diven
+    document.getElementById("flex_id7").addEventListener("click", click6)
+
+    function click6(){
+        document.getElementById("top_div").setAttribute("align", "center")
+        document.getElementById("top_div").style.color = "white";
+        document.getElementById("image").style.border = "10px solid #007500";
+    }
+
+    //Gömmer top diven
+    document.getElementById("flex_id8").addEventListener("click", click7)
+
+    function click7(){
+        var hide_div = document.getElementById("top_div");
+        hide_div.style.visibility = 'hidden'
+
+        var hide_image = document.getElementById("image");
+        hide_image.style.visibility = 'hidden'
+    }
+
+    //Visar top diven
+    document.getElementById("flex_id9").addEventListener("click", click8)
+
+    function click8(){
+        var show_div = document.getElementById("top_div");
+        show_div.style.visibility = 'visible'
+
+        var show_image = document.getElementById("image");
+        show_image.style.visibility = 'visible'
+
+        //Skapar en paragraf med tack meddelande längst ner på sidan
+        const para = document.createElement("p");
+        const node = document.createTextNode("Thank you for visiting my website!");
+        para.appendChild(node);
+
+        const element = document.getElementById("bottom_div")
+        element.appendChild(para)
+
+        document.getElementById("bottom_div").setAttribute("align", "center")
+        document.getElementById("bottom_div").style.color = "GoldenRod";
+    }
+
+    </script> 
+
+</body>
+</html>
