@@ -1,60 +1,94 @@
-.flex-box{
+/*Stylar knappsats*/
+.keypad{
     display:flex;
     flex-direction:row;
     margin:auto;
     margin-top:20px;
-    width:549px;
-    height:280px;
+    position:fixed;
+    top:60%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:28.59375vw;
+    height:14.583333333vw;
     background-color:beige;
 }
 
-.flex-container{
+/*Stylar vänster diven i knappsatsen*/
+.buttons-1{
     display:flex;
     flex-direction:column;
     align-items:center; 
     justify-content:space-evenly;
-    width:183px;
-    height:280px;
+    width:9.53125vw;
+    height:14.583333333vw;
     background-color:beige;
 }
 
-.flex-container2{
+/*Stylar center diven i knappsatsen*/
+.buttons-2{
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:space-evenly;
-    width:183px;
-    height:280px;
+    width:9.53125vw;
+    height:14.583333333vw;
     background-color:beige;
 }
 
-.flex-container3{
+/*Stylar höger diven i knappsatsen*/
+.buttons-3{
     display:flex;
     flex-direction:column;
     align-items:center; 
     justify-content:space-evenly;
-    width:183px;
-    height:280px;
+    width:9.53125vw;
+    height:14.583333333vw;
     background-color:beige;
 }
 
-.flex-item{
+/*Stylar knapparna*/
+.button{
     display:flex; 
     flex-direction:row;
     justify-content:center; 
     align-items:center;
     cursor:pointer;
-    width:105px;
-    height:55px;
+    width:5.46875vw;
+    height:2.8645833333vw;
     border-radius:5px;
     background-color:dodgerblue;
 }
 
+/*Stylar text i top diven*/
 .text{
     display:flex;
     position:absolute;
+    font-size:1vw;
     color:white;
 }
+
+/*Stylar bild i top diven*/
+img{
+    width:8vw; 
+    height:8vw;
+}
+
+/*Stylar rubrik i top diven*/
+#header{
+    font-size:1vw;
+}
+
+/*Stylar text för tid och datum*/
+#datetime{
+    font-size:1vw;
+}
+
+/*Stylar diven längst ner på sidan*/
+#bottom-div{
+    top:80%;
+    font-size:1vw;
+}
+
 
 
 
